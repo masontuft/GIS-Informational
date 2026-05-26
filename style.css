@@ -1,0 +1,277 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+header {
+  background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 2px solid #e94560;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.header-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.header-text h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.header-text p {
+  font-size: 0.8rem;
+  color: #a0b4c8;
+  margin-top: 2px;
+}
+
+/* ── Main layout ── */
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: #16213e;
+  border-right: 1px solid #0f3460;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  padding: 16px;
+  border-bottom: 1px solid #0f3460;
+}
+
+.sidebar-section h2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a0b4c8;
+  margin-bottom: 12px;
+}
+
+/* ── Filter buttons ── */
+#filter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 2px solid var(--cat-color);
+  border-radius: 8px;
+  background: transparent;
+  color: #c8d8e8;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+  opacity: 0.45;
+}
+
+.filter-btn.active {
+  background: color-mix(in srgb, var(--cat-color) 20%, transparent);
+  color: #ffffff;
+  opacity: 1;
+}
+
+.filter-btn:hover {
+  opacity: 1;
+}
+
+.filter-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quick-btn {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #0f3460;
+  border-radius: 6px;
+  background: #0f3460;
+  color: #a0b4c8;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.quick-btn:hover {
+  background: #1a4a7a;
+  color: #ffffff;
+}
+
+/* ── Marker count ── */
+#marker-count {
+  font-size: 0.8rem;
+  color: #a0b4c8;
+  font-style: italic;
+}
+
+/* ── Legend ── */
+#legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #c8d8e8;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Map container ── */
+#map {
+  flex: 1;
+  z-index: 0;
+}
+
+/* ── Custom markers ── */
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.marker-pin {
+  width: 36px;
+  height: 36px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  border: 2px solid rgba(255,255,255,0.7);
+  font-size: 1rem;
+}
+
+.marker-pin > * {
+  transform: rotate(45deg);
+}
+
+/* The emoji/icon inside the pin needs to be unrotated */
+.marker-pin {
+  font-size: 0.9rem;
+}
+
+/* ── Popup styles ── */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 260px !important;
+}
+
+.popup-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.popup-category {
+  padding: 6px 14px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.popup-title {
+  padding: 10px 14px 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.2;
+}
+
+.popup-description {
+  padding: 0 14px 10px;
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.45;
+}
+
+.popup-coords {
+  padding: 6px 14px;
+  background: #f5f5f5;
+  font-size: 0.72rem;
+  color: #888;
+  font-family: "SF Mono", "Fira Code", monospace;
+  border-top: 1px solid #eee;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid #0f3460;
+  }
+
+  .app-body {
+    flex-direction: column;
+  }
+
+  #filter-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 0.78rem;
+  }
+
+  .header-text h1 {
+    font-size: 1.1rem;
+  }
+}

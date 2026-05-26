@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Idaho Falls Points of Interest Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-icon">🗺️</div>
+    <div class="header-text">
+      <h1>Idaho Falls Points of Interest Map</h1>
+      <p>Interactive GIS demonstration — eastern Idaho region</p>
+    </div>
+  </header>
+
+  <div class="app-body">
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h2>Filter by Category</h2>
+        <div id="filter-buttons"></div>
+        <div class="quick-actions">
+          <button class="quick-btn" id="btn-show-all">Show All</button>
+          <button class="quick-btn" id="btn-hide-all">Hide All</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Status</h2>
+        <p id="marker-count"></p>
+      </div>
+
+      <div class="sidebar-section">
+        <h2>Legend</h2>
+        <div id="legend-items"></div>
+      </div>
+    </aside>
+
+    <div id="map"></div>
+
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLcE=" crossorigin=""></script>
+
+  <!-- App data and logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
