@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gis-app",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "8765", "/Users/masontuft/Documents/College/CSE310/GIS-Informational"],
+      "port": 8765
+    }
+  ]
+}
