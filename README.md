@@ -21,6 +21,7 @@ npx serve .
 - **Application Title** – Prominent header visible at all times without map interaction
 
 ### Stretch Challenges
+- **Stretch A – Live Data from a Public Server** – On load, fetches POI data from the [OpenStreetMap Overpass API](https://overpass-api.de/) for the Idaho Falls bounding box. If the API returns fewer than 20 results, local data is merged in to meet the requirement. If the request fails entirely, the app falls back to the bundled local dataset and shows an error notice in the sidebar.
 - **Stretch B – Marker Filtering** – Sidebar buttons let users show/hide markers by category; "Show All" / "Hide All" quick actions; live count of visible markers
 - **Stretch C – Multiple Marker Types** – Each of the 5 categories uses a distinct color and emoji icon; a color-coded legend explains marker styles
 
@@ -39,7 +40,7 @@ npx serve .
 - **Mapping Library:** [Leaflet.js](https://leafletjs.com/) v1.9.4 (via CDN, no API key needed)
 - **Basemap Tiles:** OpenStreetMap
 - **Frontend:** Plain HTML, CSS, JavaScript — no framework or build tools required
-- **Data:** Static `data.js` array of 25 real Idaho Falls locations
+- **Live Data:** [OpenStreetMap Overpass API](https://overpass-api.de/) (no API key required); falls back to static `data.js`
 
 ## File Structure
 

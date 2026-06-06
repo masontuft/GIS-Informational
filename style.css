@@ -135,7 +135,22 @@ header {
   color: #ffffff;
 }
 
-/* ── Marker count ── */
+/* ── Data source / marker count ── */
+.data-source {
+  font-size: 0.75rem;
+  color: #a0b4c8;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.data-source.live {
+  color: #55cc88;
+}
+
+.data-source.error {
+  color: #e06666;
+}
+
 #marker-count {
   font-size: 0.8rem;
   color: #a0b4c8;
